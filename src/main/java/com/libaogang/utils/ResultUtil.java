@@ -1,11 +1,7 @@
-package com.imooc.utils;
+package com.libaogang.utils;
 
-import com.imooc.domain.Result;
+import com.libaogang.domain.Result;
 
-/**
- * Created by 廖师兄
- * 2017-01-21 13:39
- */
 public class ResultUtil {
 
     public static Result success(Object object) {

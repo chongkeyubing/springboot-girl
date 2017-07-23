@@ -1,4 +1,4 @@
-package com.imooc.aspect;
+package com.libaogang.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -10,28 +10,25 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created by 廖师兄
- * 2017-01-15 12:31
- */
-@Aspect
-@Component
+@Aspect     //切面类
+@Component  //纳入到spring容器
 public class HttpAspect {
 
     private final static Logger logger = LoggerFactory.getLogger(HttpAspect.class);
 
-
-    @Pointcut("execution(public * com.imooc.controller.GirlController.*(..))")
+    //定义一个公用的切入点,切入com.libaogang.controller.GirlController的所有方法
+    @Pointcut("execution(public * com.libaogang.controller.GirlController.*(..))")
     public void log() {
     }
 
-    @Before("log()")
+    @Before("log()")    //使用log切入点
     public void doBefore(JoinPoint joinPoint) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
+        logger.info("=============before============");
 
         //url
-        logger.info("url={}", request.getRequestURL());
+        logger.info("url={}", request.getRequestURL());   //第二个参数会填充到{}中
 
         //method
         logger.info("method={}", request.getMethod());
@@ -48,12 +45,16 @@ public class HttpAspect {
 
     @After("log()")
     public void doAfter() {
-        logger.info("222222222222");
+        logger.info("=============after============");
     }
 
     @AfterReturning(returning = "object", pointcut = "log()")
     public void doAfterReturning(Object object) {
-        logger.info("response={}", object.toString());
+        if(object != null){
+            logger.info("response={}", object.toString());
+        }else{
+            logger.info("response={}", "{}");
+        }
     }
 
 }

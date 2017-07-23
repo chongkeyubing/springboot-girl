@@ -1,5 +1,5 @@
 server:
-  port: 8080
-girl:
+  port: 80
+girl:         #自定义配置
   cupSize: B
   age: 18

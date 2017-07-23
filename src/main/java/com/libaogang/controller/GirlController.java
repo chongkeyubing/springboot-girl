@@ -1,10 +1,10 @@
-package com.imooc.controller;
+package com.libaogang.controller;
 
-import com.imooc.domain.Girl;
-import com.imooc.domain.Result;
-import com.imooc.repository.GirlRepository;
-import com.imooc.service.GirlService;
-import com.imooc.utils.ResultUtil;
+import com.libaogang.domain.Girl;
+import com.libaogang.domain.Result;
+import com.libaogang.repository.GirlRepository;
+import com.libaogang.service.GirlService;
+import com.libaogang.utils.ResultUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Created by 廖师兄
- * 2016-11-03 23:15
- */
+
 @RestController
 public class GirlController {
 
@@ -45,7 +42,7 @@ public class GirlController {
      * @return
      */
     @PostMapping(value = "/girls")
-    public Result<Girl> girlAdd(@Valid Girl girl, BindingResult bindingResult) {
+    public Result<Girl> girlAdd(@Valid Girl girl, BindingResult bindingResult) {   //valid表单验证,bindingResult接收验证信息
         if (bindingResult.hasErrors()) {
             return ResultUtil.error(1, bindingResult.getFieldError().getDefaultMessage());
         }

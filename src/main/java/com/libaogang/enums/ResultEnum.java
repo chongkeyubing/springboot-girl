@@ -1,15 +1,12 @@
-package com.imooc.enums;
+package com.libaogang.enums;
 
-/**
- * Created by 廖师兄
- * 2017-01-21 14:23
- */
+
 public enum ResultEnum {
     UNKONW_ERROR(-1, "未知错误"),
     SUCCESS(0, "成功"),
     PRIMARY_SCHOOL(100, "我猜你可能还在上小学"),
     MIDDLE_SCHOOL(101, "你可能在上初中"),
-
+    NOT_EXSIT(102,"该girl不存在")
     ;
 
     private Integer code;

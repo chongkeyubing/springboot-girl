@@ -1,7 +1,7 @@
-package com.imooc;
+package com.libaogang;
 
-import com.imooc.domain.Girl;
-import com.imooc.service.GirlService;
+import com.libaogang.domain.Girl;
+import com.libaogang.service.GirlService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +22,7 @@ public class GirlServiceTest {
 
     @Test
     public void findOneTest() {
-        Girl girl = girlService.findOne(73);
-        Assert.assertEquals(new Integer(13), girl.getAge());
+        Girl girl = girlService.findOne(1);
+        Assert.assertEquals(new Integer(15), girl.getAge());
     }
 }

@@ -1,11 +1,8 @@
-package com.imooc.exception;
+package com.libaogang.exception;
 
-import com.imooc.enums.ResultEnum;
+import com.libaogang.enums.ResultEnum;
 
-/**
- * Created by 廖师兄
- * 2017-01-21 14:05
- */
+
 public class GirlException extends RuntimeException{
 
     private Integer code;

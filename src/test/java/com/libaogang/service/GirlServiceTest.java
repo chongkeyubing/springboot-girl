@@ -1,4 +1,4 @@
-package com.imooc.service;
+package com.libaogang.service;
 
 import org.junit.Test;
 

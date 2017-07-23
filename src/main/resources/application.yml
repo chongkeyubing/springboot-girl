@@ -1,14 +1,14 @@
 spring:
   profiles:
-    active: dev
+    active: dev   #启动开发环境的配置文件
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/dbgirl
     username: root
-    password: 123456
+    password: root
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update    #create每次启动重新建表 update没有表则创建，有则更新
     show-sql: true
 
 

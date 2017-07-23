@@ -1,4 +1,4 @@
-package com.imooc.domain;
+package com.libaogang.domain;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -8,21 +8,18 @@ import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-/**
- * Created by 廖师兄
- * 2016-11-03 23:07
- */
-@Entity
+
+@Entity         //对应数据库表
 public class Girl {
 
-    @Id
+    @Id                //id自增
     @GeneratedValue
     private Integer id;
 
     @NotBlank(message = "这个字段必传")
     private String cupSize;
 
-    @Min(value = 18, message = "未成年少女禁止入门")
+    @Min(value = 18, message = "未成年少女禁止入内")
 //    @NotNull
 //    @Max()
 //    @Length()

@@ -1,4 +1,4 @@
-package com.imooc.controller;
+package com.libaogang.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
